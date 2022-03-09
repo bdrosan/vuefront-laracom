@@ -10,7 +10,11 @@
             <router-link to="/about" class="nav-link">About</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/dashboard" class="nav-link" v-if="loggedIn">
+            <router-link
+              to="/dashboard"
+              class="nav-link"
+              v-if="loggedIn && permitted"
+            >
               Dashboard
             </router-link>
           </li>
@@ -64,6 +68,7 @@ export default {
   computed: {
     ...mapGetters({
       loggedIn: "auth/loggedIn",
+      permitted: "auth/permitted",
     }),
     currentUser: {
       get() {
@@ -96,6 +101,7 @@ export default {
       "Authorization"
     ] = `Bearer ${localStorage.getItem("login_token")}`;
     this.$store.dispatch("auth/getUser");
+    this.$store.dispatch("auth/getPermission");
   },
 };
 </script>

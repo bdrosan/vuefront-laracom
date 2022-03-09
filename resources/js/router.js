@@ -6,7 +6,6 @@ import Login from "./views/Login";
 import Register from "./views/Register";
 import Dashboard from "./views/Dashboard";
 import NotFound from "./views/NotFound";
-import store from "./store";
 
 Vue.use(VueRouter);
 
@@ -20,7 +19,7 @@ const routes = [
         path: "/dashboard",
         component: Dashboard,
         name: "Dashboard",
-        meta: { requiresAuth: true },
+        meta: { requiresAuth: true, permission: "access-dashboard" },
     },
 ];
 
