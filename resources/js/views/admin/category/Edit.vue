@@ -72,7 +72,6 @@
             <div class="col-md-3">
               <img :src="form.image" alt="" height="70px" class="float-right" />
             </div>
-
             <div class="form-group row">
               <label for="status" class="col-sm-3 col-form-label">Status</label>
               <div class="col-sm-9">
