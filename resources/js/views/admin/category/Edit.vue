@@ -34,16 +34,21 @@
             </div>
             <input type="hidden" v-model="form.id" />
             <div class="col-md-8 mb-3">
-              <label for="validationDefault02">Parent Category</label>
-              <select name="parent_id" id="parent_id" class="form-select">
+              <label for="parent_id">Parent Category</label>
+              <select
+                name="parent_id"
+                id="parent_id"
+                class="form-select"
+                v-model="form.parent_id"
+              >
                 <option value=""></option>
                 <option
-                  v-for="Parent in Categories"
-                  :key="Parent.id"
-                  :value="Parent.id"
-                  :selected="form.parent_id == Parent.id"
+                  v-for="parent in categories"
+                  :key="parent.id"
+                  :value="parent.id"
+                  :selected="form.parent_id == parent.id"
                 >
-                  {{ Parent.name }}
+                  {{ parent.name }}
                 </option>
               </select>
             </div>
@@ -59,18 +64,27 @@
               />
             </div>
             <div class="col-md-8 mb-3">
-              <label for="validationDefault02">Image</label>
-              <input
-                type="file"
-                class="form-control"
-                id="image"
-                :v-model="form.image"
-                name="image"
-                @change="loadeimage($event)"
-              />
-            </div>
-            <div class="col-md-3">
-              <img :src="form.image" alt="" height="70px" class="float-right" />
+              <div class="row">
+                <div class="col-md-9">
+                  <label for="validationDefault02">Image</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="image"
+                    :v-model="form.image"
+                    name="image"
+                    @change="loadeimage($event)"
+                  />
+                </div>
+                <div class="col-md-3">
+                  <img
+                    :src="form.image"
+                    alt=""
+                    height="70px"
+                    class="img-fluid mt-3"
+                  />
+                </div>
+              </div>
             </div>
 
             <div class="form-group row">
@@ -113,6 +127,7 @@
 
 <script>
 import Form from "vform";
+import { mapGetters } from "vuex";
 export default {
   name: "edit",
   data: () => ({
@@ -127,20 +142,19 @@ export default {
   }),
   mounted() {
     this.getCategory();
-    this.$store.dispatch("getAll", this.$route.params.id);
+    this.$store.dispatch("category/getAll", this.$route.params.id);
   },
   computed: {
-    Categories() {
-      return this.$store.getters.category;
-    },
+    ...mapGetters({
+      categories: "category/all",
+    }),
   },
   methods: {
-    updateCategory: function () {
+    async updateCategory() {
       var id = this.$route.params.id;
-      this.form
-        .put("/update-category/" + id)
-        .then((response) => {
-          console.log(response);
+      await this.form
+        .put("/api/category/" + id)
+        .then(() => {
           Swal.fire({
             position: "top",
             icon: "success",
@@ -160,7 +174,7 @@ export default {
         .get("/api/category/" + id)
         .then((response) => {
           this.form.fill(response.data);
-          //   console.log(response.data.category);
+          this.form.image = "/storage/category/thumbs/" + response.data.image;
         })
         .catch((error) => {
           console.log(error);
@@ -171,14 +185,13 @@ export default {
       let file = e.target.files[0];
       const filereader = new FileReader();
       filereader.onload = function (e) {
-        // console.log(e.target.result);
         test.form.image = e.target.result;
       };
       filereader.readAsDataURL(file);
     },
   },
   fileLink: function (name) {
-    return "uploades/" + name;
+    return "storage/category/" + name;
   },
 };
 </script>
