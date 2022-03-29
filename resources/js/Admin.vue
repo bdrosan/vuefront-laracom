@@ -85,7 +85,7 @@
               </svg>
             </span>
             <span class="app-brand-text demo menu-text fw-bolder ms-2"
-              >Sneat</span
+              >Vuefront Laracom</span
             >
           </router-link>
 
@@ -99,7 +99,7 @@
 
         <div class="menu-inner-shadow" style="display: block"></div>
 
-        <ul class="menu-inner py-1 ps ps--active-y">
+        <ul class="menu-inner py-1 ps ps--active-y" v-if="loggedIn">
           <router-link tag="li" to="/admin/dashboard" class="menu-item">
             <a class="menu-link">
               <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -158,7 +158,10 @@
             </div>
             <!-- /Search -->
 
-            <ul class="navbar-nav flex-row align-items-center ms-auto">
+            <ul
+              class="navbar-nav flex-row align-items-center ms-auto"
+              v-if="loggedIn"
+            >
               <!-- Place this tag where you want the button to render. -->
               <li class="nav-item lh-1 me-3">
                 <span></span>
@@ -193,8 +196,16 @@
                           </div>
                         </div>
                         <div class="flex-grow-1">
-                          <span class="fw-semibold d-block">John Doe</span>
-                          <small class="text-muted">Admin</small>
+                          <span class="fw-semibold d-block">{{
+                            currentUser.name
+                          }}</span>
+                          <small class="text-muted">
+                            {{
+                              rolePermissions.role
+                                ? rolePermissions.role[0]
+                                : null
+                            }}
+                          </small>
                         </div>
                       </div>
                     </a>
@@ -317,9 +328,15 @@ export default {
     ...mapGetters({
       loggedIn: "auth/loggedIn",
     }),
+
     currentUser: {
       get() {
         return this.$store.state.auth.user;
+      },
+    },
+    rolePermissions: {
+      get() {
+        return this.$store.state.auth.rolePermissions;
       },
     },
   },
@@ -348,6 +365,7 @@ export default {
       "Authorization"
     ] = `Bearer ${localStorage.getItem("login_token")}`;
     this.$store.dispatch("auth/getUser");
+    this.$store.dispatch("auth/getRolePermissions");
   },
 };
 </script>

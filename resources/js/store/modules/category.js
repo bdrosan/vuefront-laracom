@@ -1,38 +1,47 @@
 export default {
+    namespaced: true,
     state: {
-        categotyData: [],
+        single: {},
+        paginate: [],
+        all: [],
     },
     getters: {
-        category(state) {
-            return state.categotyData;
+        single(state) {
+            return state.single;
+        },
+        paginate(state) {
+            return state.paginate;
+        },
+        all(state) {
+            return state.all;
         },
     },
     actions: {
-        async getAll({ commit }, id) {
-            await axios
-                .get("/api/category/all/" + id)
+        getAll({ commit }, id) {
+            axios
+                .get("/api/category/all/" + id) //return all. id is optional, if provided returns all except id
                 .then((response) => {
-                    commit("category", response.data);
+                    commit("all", response.data);
                 })
                 .catch((error) => {
                     console.log(error);
                 });
         },
-        getCategories({ commit }, page) {
+        getPaginate({ commit }, page) {
             axios
                 .get("/api/category?page=" + page)
                 .then((response) => {
-                    commit("category", response.data);
+                    commit("paginate", response.data);
                 })
                 .catch((error) => {
                     console.log(error);
                 });
         },
-        getCategory({ commit }, id) {
+        getSingle({ commit }, id) {
             axios
                 .get("/api/category/26")
                 .then((response) => {
-                    commit("category", response.data);
+                    commit("single", response.data);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -40,8 +49,14 @@ export default {
         },
     },
     mutations: {
-        category(state, data) {
-            return (state.categotyData = data);
+        single(state, data) {
+            return (state.single = data);
+        },
+        paginate(state, data) {
+            return (state.paginate = data);
+        },
+        all(state, data) {
+            return (state.all = data);
         },
     },
 };
