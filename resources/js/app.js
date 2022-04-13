@@ -6,6 +6,8 @@ import router from "./router";
 import store from "./store";
 import Paginate from "vuejs-paginate";
 Vue.component("paginate", Paginate);
+import VueCarousel from "vue-carousel";
+Vue.use(VueCarousel);
 // vform
 import Form from "vform";
 window.Form = Form;
