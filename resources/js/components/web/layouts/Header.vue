@@ -1,6 +1,24 @@
 <template>
   <div class="bg-white">
-    <div class="bg-secondary p-1 text-light text-center">announcement</div>
+    <div
+      class="
+        alert alert-dark alert-dismissible
+        fade
+        show
+        m-0
+        rounded-0
+        text-center
+      "
+      role="alert"
+    >
+      Announcement
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      />
+    </div>
     <div class="container-fluid d-sm-flex justify-content-between py-3 d-none">
       <div>Free Shipping on Orders $50+</div>
       <div class="d-flex gap-4">
@@ -76,6 +94,16 @@
               aria-label="Search the entire store"
               aria-describedby="button-addon2"
             />
+            <select name="category" class="form-select search-select">
+              <option value="" class="text-end">All Categories</option>
+              <option
+                :value="Category.name"
+                :key="Category.id"
+                v-for="Category in Categories"
+              >
+                {{ Category.name }}
+              </option>
+            </select>
             <button class="btn btn-secondary" type="button" id="button-addon2">
               Search
             </button>
@@ -128,8 +156,20 @@
 <script>
 export default {
   name: "Header",
+  mounted() {
+    this.$store.dispatch("category/getAll");
+  },
+  computed: {
+    Categories() {
+      return this.$store.state.category.all;
+    },
+  },
 };
 </script>
 
 <style>
+.search-select {
+  max-width: 200px;
+  border-left: 0;
+}
 </style>

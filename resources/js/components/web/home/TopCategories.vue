@@ -16,7 +16,7 @@
               class="card-img-top px-2"
               :alt="Category.name"
             />
-            <div class="card-body text-center fs-5">
+            <div class="card-body text-center fs-6">
               {{ Category.name }}
             </div>
           </div>

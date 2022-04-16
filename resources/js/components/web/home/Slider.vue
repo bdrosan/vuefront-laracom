@@ -12,46 +12,50 @@
         class="active"
         aria-current="true"
         aria-label="Slide 1"
-      ></button>
+      />
       <button
         type="button"
         data-bs-target="#carouselExampleFade"
         data-bs-slide-to="1"
         aria-label="Slide 2"
-      ></button>
+      />
       <button
         type="button"
         data-bs-target="#carouselExampleFade"
         data-bs-slide-to="2"
         aria-label="Slide 3"
-      ></button>
+      />
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img
-          src="/storage/slider/revo11-min.jpg"
-          class="d-block w-100"
-          alt="..."
-        />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/storage/slider/revo12-min.jpg"
-          class="d-block w-100"
-          alt="..."
-        />
-        <div style="position: absolute; top: 15%; left: 15%">
-          <div class="fs-2">Title</div>
-          <div class="display-4">Description</div>
-          <button class="btn btn-primary">Shop Now</button>
+    <div class="carousel-inner slider">
+      <div
+        class="carousel-item active"
+        style="background-image: url('/storage/slider/revo11-min.jpg')"
+      >
+        <div class="slider-caption">
+          <div class="fs-2">Lorem ipsum</div>
+          <div class="display-4 mb-3">Lorem ipsum dolor sit</div>
+          <a href="#" class="btn btn-primary">Shop Now</a>
         </div>
       </div>
-      <div class="carousel-item">
-        <img
-          src="/storage/slider/revo13-min.jpg"
-          class="d-block w-100"
-          alt="..."
-        />
+      <div
+        class="carousel-item"
+        style="background-image: url('/storage/slider/revo12-min.jpg')"
+      >
+        <div class="slider-caption">
+          <div class="fs-2">Lorem ipsum</div>
+          <div class="display-4 mb-3">Lorem ipsum dolor sit</div>
+          <a href="#" class="btn btn-primary">Shop Now</a>
+        </div>
+      </div>
+      <div
+        class="carousel-item"
+        style="background-image: url('/storage/slider/revo13-min.jpg')"
+      >
+        <div class="slider-caption">
+          <div class="fs-2">Lorem ipsum</div>
+          <div class="display-4 mb-3">Lorem ipsum dolor sit</div>
+          <a href="#" class="btn btn-primary">Shop Now</a>
+        </div>
       </div>
     </div>
     <button
@@ -82,4 +86,17 @@ export default {
 </script>
 
 <style>
+.slider .carousel-item {
+  background-color: #e6e6e6;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 400px;
+}
+.slider-caption {
+  position: absolute;
+  top: 80px;
+  left: 15%;
+  max-width: 360px;
+}
 </style>
