@@ -251,12 +251,18 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="customer-support">
       <div class="container-fluid">
-        <div class="row space-around">
+        <div class="row g-2">
           <div class="col-auto col-lg-4 col-xl-2 col-6">
             <div
-              class="d-flex justify-content-evenly align-items-center border"
+              class="
+                d-flex
+                flex-column flex-md-row
+                justify-content-evenly
+                align-items-center
+                border
+              "
             >
               <i class="bi bi-truck fs-1"></i>
               <div class="content">
@@ -267,7 +273,13 @@
           </div>
           <div class="col-auto col-lg-4 col-xl-2 col-6">
             <div
-              class="d-flex justify-content-evenly align-items-center border"
+              class="
+                d-flex
+                flex-column flex-md-row
+                justify-content-evenly
+                align-items-center
+                border
+              "
             >
               <i class="bi bi-chat-dots fs-1"></i>
               <div class="content">
@@ -278,7 +290,13 @@
           </div>
           <div class="col-auto col-lg-4 col-xl-2 col-6">
             <div
-              class="d-flex justify-content-evenly align-items-center border"
+              class="
+                d-flex
+                flex-column flex-md-row
+                justify-content-evenly
+                align-items-center
+                border
+              "
             >
               <i class="bi bi-arrow-counterclockwise fs-1"></i>
               <div class="content">
@@ -289,7 +307,13 @@
           </div>
           <div class="col-auto col-lg-4 col-xl-2 col-6">
             <div
-              class="d-flex justify-content-evenly align-items-center border"
+              class="
+                d-flex
+                flex-column flex-md-row
+                justify-content-evenly
+                align-items-center
+                border
+              "
             >
               <i class="bi bi-credit-card fs-1"></i>
               <div class="content">
@@ -300,7 +324,13 @@
           </div>
           <div class="col-auto col-lg-4 col-xl-2 col-6">
             <div
-              class="d-flex justify-content-evenly align-items-center border"
+              class="
+                d-flex
+                flex-column flex-md-row
+                justify-content-evenly
+                align-items-center
+                border
+              "
             >
               <i class="bi bi-tags fs-1"></i>
               <div class="content">
@@ -311,7 +341,13 @@
           </div>
           <div class="col-auto col-lg-4 col-xl-2 col-6">
             <div
-              class="d-flex justify-content-evenly align-items-center border"
+              class="
+                d-flex
+                flex-column flex-md-row
+                justify-content-evenly
+                align-items-center
+                border
+              "
             >
               <i class="bi bi-headphones fs-1"></i>
               <div class="content">
@@ -370,15 +406,105 @@
                 </div>
               </div>
             </div>
+            <div class="card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <a href="#">
+                    <img
+                      src="/storage/product/dji_spark_fly_more_combo.jpg"
+                      class="img-fluid rounded-start"
+                      alt="DJI Spark Fly More Combo pro max"
+                    />
+                  </a>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <a title="Beats Solo3 Wireless On-Ear Headphones" href="#">
+                      DJI Spark Fly More Combo pro max
+                    </a>
+                    <span class="text-danger fw-bold">$180.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-lg-3">
             <h4>Top Trending</h4>
+            <div class="card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <a href="#">
+                    <img
+                      src="/storage/product/new_apple_airpods_max_-_sky_blue.jpg"
+                      class="img-fluid rounded-start"
+                      alt="New Apple AirPods Max - Sky Blue"
+                    />
+                  </a>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <a title="Beats Solo3 Wireless On-Ear Headphones" href="#">
+                      New Apple AirPods Max - Sky Blue
+                    </a>
+                    <span class="text-danger fw-bold">$250.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-lg-3">
             <h4>Top Seller</h4>
           </div>
           <div class="col-lg-3">
             <h4>Top Popular</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="brand" class="bg-white py-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-6 col-md-2">
+            <img
+              src="/storage/brand/brand1.jpg"
+              class="img-fluid"
+              alt="brand1"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <img
+              src="/storage/brand/brand2.jpg"
+              class="img-fluid"
+              alt="brand2"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <img
+              src="/storage/brand/brand3.jpg"
+              class="img-fluid"
+              alt="brand3"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <img
+              src="/storage/brand/brand4.jpg"
+              class="img-fluid"
+              alt="brand4"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <img
+              src="/storage/brand/brand5.jpg"
+              class="img-fluid"
+              alt="brand5"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <img
+              src="/storage/brand/brand6.jpg"
+              class="img-fluid"
+              alt="brand6"
+            />
           </div>
         </div>
       </div>

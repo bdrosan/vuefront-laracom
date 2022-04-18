@@ -119,7 +119,12 @@
               <span class="text-danger fw-bold">(+88) 0123456789</span>
             </div>
           </a>
-          <a href="javascript:void(0)">
+          <a
+            data-bs-toggle="offcanvas"
+            href="#offcanvasRight"
+            role="button"
+            aria-controls="offcanvasRight"
+          >
             <i class="bi-cart fs-1"></i>
             <div class="d-inline-flex flex-column-reverse align-items-center">
               <span>Cart</span>
@@ -128,6 +133,32 @@
               </span>
             </div>
           </a>
+
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel"
+          >
+            <div class="offcanvas-header bg-warning">
+              <h5 id="offcanvasRightLabel">Shopping Cart</h5>
+              <button
+                type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="text-center">
+                <i class="bi bi-cart-x fs-1"></i>
+                <p>Your cart in empty</p>
+                <button class="btn btn-primary" data-bs-toggle="offcanvas">
+                  Return to Shop
+                </button>
+              </div>
+            </div>
+          </div>
           <div class="position-relative d-flex align-items-center">
             <a href="#">
               <i class="bi-heart fs-2"></i>
