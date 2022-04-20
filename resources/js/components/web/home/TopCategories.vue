@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div v-if="this.$store.state.category.loading" class="loading" />
     <carousel
       :perPageCustom="[
         [480, 2],
@@ -7,9 +8,10 @@
         [992, 4],
         [1200, 6],
       ]"
+      v-else
     >
       <slide :key="Category.id" v-for="Category in Categories">
-        <a href="#">
+        <router-link :to="'/category/' + Category.slug">
           <div class="card border-0">
             <img
               :src="thumbLink(Category.image)"
@@ -20,7 +22,7 @@
               {{ Category.name }}
             </div>
           </div>
-        </a>
+        </router-link>
       </slide>
     </carousel>
   </div>
@@ -31,7 +33,6 @@ import { Carousel, Slide } from "vue-carousel";
 export default {
   name: "category",
   components: { Carousel, Slide },
-
   mounted() {
     this.$store.dispatch("category/getAll");
   },
