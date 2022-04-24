@@ -105,7 +105,7 @@
     <section id="catalog-1" class="py-5">
       <div class="container-fluid">
         <h4>Smartphone & Tablet</h4>
-        <catalog />
+        <catalog :categories="[27]" banner="cate11-min.jpg" />
       </div>
     </section>
     <section id="banner-full" class="py-5">
@@ -127,7 +127,7 @@
     <section id="catalog-2" class="py-5">
       <div class="container-fluid">
         <h4>Laptop, Computer, Tvs</h4>
-        <catalog />
+        <catalog :categories="[31, 33]" banner="cate12-min.jpg" />
       </div>
     </section>
     <section id="banner-half" class="py-5">
@@ -187,7 +187,7 @@
     <section id="catalog-3" class="py-5">
       <div class="container-fluid">
         <h4>Games, Cameras, Accessories</h4>
-        <catalog />
+        <catalog :categories="[32, 26, 35]" banner="cate13-min.jpg" />
       </div>
     </section>
     <section id="banner-2-1" class="py-5">

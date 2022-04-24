@@ -45,7 +45,7 @@ export default {
         getSingle({ commit }, id) {
             commit("loading", true);
             axios
-                .get("/api/category/26")
+                .get("/api/category/" + id)
                 .then((response) => {
                     commit("single", response.data);
                     commit("loading", false);

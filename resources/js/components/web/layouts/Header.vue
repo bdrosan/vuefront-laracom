@@ -104,7 +104,7 @@
                 {{ Category.name }}
               </option>
             </select>
-            <button class="btn btn-secondary" type="button" id="button-addon2">
+            <button class="btn btn-dark" type="button" id="button-addon2">
               Search
             </button>
           </div>
