@@ -1,29 +1,8 @@
 <template>
-  <div>
+  <div class="product-content">
     <div v-if="loading" class="loading"></div>
-    <div class="d-flex gap-3" v-else>
-      <div
-        class="poster-content d-flex justify-content-center align-items-end"
-        :style="bannerImage"
-      >
-        <div class="text-center">
-          <div data-element="content">
-            <h5><span style="color: #ffc000">Featured </span></h5>
-            <h3 style="margin: 0">
-              <span style="font-size: 32px; line-height: 32px; color: #ffffff"
-                >Mi 11 Lite</span
-              >
-            </h3>
-            <h4 style="font-weight: 300; margin: 0">
-              <span style="font-size: 28px; line-height: 28px; color: #ffffff"
-                >32GB Unlocked
-              </span>
-            </h4>
-          </div>
-          <button type="button" class="btn btn-primary mt-4">shop now</button>
-        </div>
-      </div>
-      <div class="product-content" v-if="Products.length">
+    <div v-else>
+      <div v-if="Products.length">
         <div class="row g-0">
           <div class="col-lg-4">
             <div
@@ -69,6 +48,7 @@
           </div>
         </div>
       </div>
+      <div v-else>No Product Found</div>
     </div>
   </div>
 </template>
@@ -76,14 +56,11 @@
 <script>
 export default {
   name: "Catalog",
-  props: ["categories", "banner"],
+  props: ["categories"],
   data() {
     return {
       loading: true,
       Products: {},
-      bannerImage: {
-        "background-image": "url(" + "/storage/home/" + this.banner + ")",
-      },
     };
   },
   mounted() {
@@ -106,15 +83,6 @@ export default {
 </script>
 
 <style>
-.poster-content {
-  width: 270px;
-  border-radius: 10px;
-  height: 700px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 120px;
-  text-align: center;
-}
 .product-content {
   width: calc(100% - 270px);
 }

@@ -105,7 +105,37 @@
     <section id="catalog-1" class="py-5">
       <div class="container-fluid">
         <h4>Smartphone & Tablet</h4>
-        <catalog :categories="[27]" banner="cate11-min.jpg" />
+        <div class="d-flex gap-3">
+          <div
+            class="poster-content d-flex justify-content-center align-items-end"
+            style="
+              background-image: url('/storage/home/cate11-min.jpg');
+              padding: 120px 15px;
+            "
+          >
+            <div class="text-center">
+              <div data-element="content">
+                <h5><span style="color: #ffc000">Featured </span></h5>
+                <h3 style="margin: 0">
+                  <span
+                    style="font-size: 32px; line-height: 32px; color: #ffffff"
+                    >Mi 11 Lite</span
+                  >
+                </h3>
+                <h4 style="font-weight: 300; margin: 0">
+                  <span
+                    style="font-size: 28px; line-height: 28px; color: #ffffff"
+                    >32GB Unlocked
+                  </span>
+                </h4>
+              </div>
+              <button type="button" class="btn btn-primary mt-4">
+                Shop now
+              </button>
+            </div>
+          </div>
+          <catalog :categories="[27]" />
+        </div>
       </div>
     </section>
     <section id="banner-full" class="py-5">
@@ -127,7 +157,40 @@
     <section id="catalog-2" class="py-5">
       <div class="container-fluid">
         <h4>Laptop, Computer, Tvs</h4>
-        <catalog :categories="[31, 33]" banner="cate12-min.jpg" />
+        <div class="d-flex gap-3">
+          <div
+            class="
+              poster-content
+              d-flex
+              justify-content-center
+              align-items-start
+            "
+            style="
+              background-image: url('/storage/home/cate12-min.jpg');
+              padding: 70px 15px;
+            "
+          >
+            <div class="text-center">
+              <div data-element="content">
+                <h5><span style="color: #f04706">Top Trending</span></h5>
+                <h3 style="margin: 0">
+                  <span style="font-size: 32px; line-height: 32px"
+                    >VR Reality</span
+                  >
+                </h3>
+                <h4 style="font-weight: 300; margin: 0">
+                  <span style="font-size: 28px; line-height: 28px"
+                    >3D Glasses</span
+                  >
+                </h4>
+              </div>
+              <button type="button" class="btn btn-primary mt-4">
+                shop now
+              </button>
+            </div>
+          </div>
+          <catalog :categories="[31, 33]" />
+        </div>
       </div>
     </section>
     <section id="banner-half" class="py-5">
@@ -187,7 +250,31 @@
     <section id="catalog-3" class="py-5">
       <div class="container-fluid">
         <h4>Games, Cameras, Accessories</h4>
-        <catalog :categories="[32, 26, 35]" banner="cate13-min.jpg" />
+        <div class="d-flex gap-3">
+          <div
+            class="poster-content d-flex justify-content-center align-items-end"
+            style="
+              background-image: url('/storage/home/cate13-min.jpg');
+              padding: 70px 15px;
+            "
+          >
+            <div class="text-center">
+              <h5><span style="color: #ffffff">Discount 25% Off</span></h5>
+              <h3 style="margin: 0; font-weight: 300">
+                <span style="font-size: 36px; line-height: 36px">Wireless</span>
+              </h3>
+              <h4 style="font-weight: 300; margin: 0 0 20px">
+                <span style="font-size: 28px; line-height: 28px"
+                  >Beats Studio3</span
+                >
+              </h4>
+              <button type="button" class="btn btn-secondary mt-4">
+                shop now
+              </button>
+            </div>
+          </div>
+          <catalog :categories="[32, 26, 35]" />
+        </div>
       </div>
     </section>
     <section id="banner-2-1" class="py-5">
@@ -364,65 +451,76 @@
         <div class="row">
           <div class="col-lg-3">
             <h4>Latest</h4>
-            <div class="card mb-3" style="max-width: 540px">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <a href="#">
-                    <img
-                      src="/storage/product/beats_solo3_wireless_on-ear_headphones.jpg"
-                      class="img-fluid rounded-start"
-                      alt="Beats Solo3 Wireless On-Ear Headphones"
-                    />
-                  </a>
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <a title="Beats Solo3 Wireless On-Ear Headphones" href="#">
-                      Beats Solo3 Wireless On-Ear Headphones
+            <div class="bg-white">
+              <div class="card border-0 mb-3" style="max-width: 540px">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <a href="#">
+                      <img
+                        src="/storage/product/beats_solo3_wireless_on-ear_headphones.jpg"
+                        class="img-fluid rounded-start"
+                        alt="Beats Solo3 Wireless On-Ear Headphones"
+                      />
                     </a>
-                    <span class="text-danger fw-bold">$40.00</span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <a
+                        title="Beats Solo3 Wireless On-Ear Headphones"
+                        href="#"
+                      >
+                        Beats Solo3 Wireless On-Ear Headphones
+                      </a>
+                      <span class="text-danger fw-bold">$40.00</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="card mb-3" style="max-width: 540px">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <a href="#">
-                    <img
-                      src="/storage/product/airpods_pro_with_wireless_charging_case_1.jpg"
-                      class="img-fluid rounded-start"
-                      alt="AirPods Pro with Wireless Charging Case"
-                    />
-                  </a>
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <a title="Beats Solo3 Wireless On-Ear Headphones" href="#">
-                      AirPods Pro with Wireless Charging Case
+              <div class="card border-0 mb-3" style="max-width: 540px">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <a href="#">
+                      <img
+                        src="/storage/product/airpods_pro_with_wireless_charging_case_1.jpg"
+                        class="img-fluid rounded-start"
+                        alt="AirPods Pro with Wireless Charging Case"
+                      />
                     </a>
-                    <span class="text-danger fw-bold">$130.00</span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <a
+                        title="Beats Solo3 Wireless On-Ear Headphones"
+                        href="#"
+                      >
+                        AirPods Pro with Wireless Charging Case
+                      </a>
+                      <span class="text-danger fw-bold">$130.00</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="card mb-3" style="max-width: 540px">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <a href="#">
-                    <img
-                      src="/storage/product/dji_spark_fly_more_combo.jpg"
-                      class="img-fluid rounded-start"
-                      alt="DJI Spark Fly More Combo pro max"
-                    />
-                  </a>
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <a title="Beats Solo3 Wireless On-Ear Headphones" href="#">
-                      DJI Spark Fly More Combo pro max
+              <div class="card border-0 mb-3" style="max-width: 540px">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <a href="#">
+                      <img
+                        src="/storage/product/dji_spark_fly_more_combo.jpg"
+                        class="img-fluid rounded-start"
+                        alt="DJI Spark Fly More Combo pro max"
+                      />
                     </a>
-                    <span class="text-danger fw-bold">$180.00</span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <a
+                        title="Beats Solo3 Wireless On-Ear Headphones"
+                        href="#"
+                      >
+                        DJI Spark Fly More Combo pro max
+                      </a>
+                      <span class="text-danger fw-bold">$180.00</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -553,5 +651,10 @@ export default {
   background-color: transparent;
   padding-left: 60px;
   padding-top: 30px;
+}
+.poster-content {
+  width: 270px;
+  border-radius: 10px;
+  height: 700px;
 }
 </style>
