@@ -471,7 +471,7 @@
                       >
                         Beats Solo3 Wireless On-Ear Headphones
                       </a>
-                      <span class="text-danger fw-bold">$40.00</span>
+                      <span class="price">$40.00</span>
                     </div>
                   </div>
                 </div>
@@ -495,7 +495,7 @@
                       >
                         AirPods Pro with Wireless Charging Case
                       </a>
-                      <span class="text-danger fw-bold">$130.00</span>
+                      <div class="price">$130.00</div>
                     </div>
                   </div>
                 </div>
@@ -519,7 +519,7 @@
                       >
                         DJI Spark Fly More Combo pro max
                       </a>
-                      <span class="text-danger fw-bold">$180.00</span>
+                      <div class="price">$180.00</div>
                     </div>
                   </div>
                 </div>
@@ -544,7 +544,7 @@
                     <a title="Beats Solo3 Wireless On-Ear Headphones" href="#">
                       New Apple AirPods Max - Sky Blue
                     </a>
-                    <span class="text-danger fw-bold">$250.00</span>
+                    <div class="price">$250.00</div>
                   </div>
                 </div>
               </div>

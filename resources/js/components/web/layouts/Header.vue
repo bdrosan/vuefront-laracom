@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="header bg-white">
     <div
       class="
         alert alert-dark alert-dismissible

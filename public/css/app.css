@@ -232,11 +232,11 @@ sup {
 }
 
 a {
-  color: #916d02;
+  color: #0d6efd;
   text-decoration: none;
 }
 a:hover {
-  color: #d5a005;
+  color: #0a58ca;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -3466,11 +3466,11 @@ textarea.form-control-lg {
 
 .btn-link {
   font-weight: 400;
-  color: #916d02;
+  color: #0d6efd;
   text-decoration: none;
 }
 .btn-link:hover {
-  color: #d5a005;
+  color: #0a58ca;
 }
 .btn-link:disabled, .btn-link.disabled {
   color: #6c757d;
@@ -3937,7 +3937,7 @@ textarea.form-control-lg {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #916d02;
+  color: #0d6efd;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3946,7 +3946,7 @@ textarea.form-control-lg {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  color: #d5a005;
+  color: #0a58ca;
 }
 .nav-link.disabled {
   color: #6c757d;
@@ -4800,7 +4800,7 @@ textarea.form-control-lg {
 .page-link {
   position: relative;
   display: block;
-  color: #916d02;
+  color: #0d6efd;
   background-color: #fff;
   border: 1px solid #dee2e6;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -4812,13 +4812,13 @@ textarea.form-control-lg {
 }
 .page-link:hover {
   z-index: 2;
-  color: #d5a005;
+  color: #0a58ca;
   background-color: #e9ecef;
   border-color: #dee2e6;
 }
 .page-link:focus {
   z-index: 3;
-  color: #d5a005;
+  color: #0a58ca;
   background-color: #e9ecef;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
@@ -11332,4 +11332,42 @@ textarea.form-control-lg {
   100% {
     transform: rotate(360deg);
   }
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #d43811;
+  margin: 5px 0 10px;
+}
+
+.header a {
+  color: #916d02;
+}
+
+.header a:hover {
+  color: #d5a005;
+}
+
+.top {
+  --offset: 200px;
+  margin-top: calc(100vh + var(--offset));
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 20px;
+  right: 10px;
+  padding: 10px;
+  color: #fff;
+  background: #000;
+  border-radius: 100px;
+  white-space: nowrap;
+  opacity: 0.5;
+}
+
+.top:hover {
+  opacity: 1;
 }
