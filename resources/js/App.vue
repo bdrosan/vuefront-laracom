@@ -1,5 +1,7 @@
 <template>
   <div>
+    <Header />
+    <Navbar />
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow shadow-sm">
       <div class="container-fluid">
         <ul class="navbar-nav">
@@ -60,15 +62,19 @@
         </ul>
       </div>
     </nav>
-
     <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import Footer from "./components/web/layouts/Footer.vue";
+import Header from "./components/web/layouts/Header.vue";
+import Navbar from "./components/web/layouts/Navbar.vue";
 
 export default {
+  components: { Header, Footer, Navbar },
   name: "App",
   computed: {
     ...mapGetters({

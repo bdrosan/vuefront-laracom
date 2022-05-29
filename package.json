@@ -26,6 +26,7 @@
     "dependencies": {
         "sweetalert2": "^11.4.4",
         "vform": "^2.1.2",
+        "vue-carousel": "^0.18.0",
         "vue-router": "^3.5.3",
         "vuejs-paginate": "^2.1.0",
         "vuex": "^3.6.2"

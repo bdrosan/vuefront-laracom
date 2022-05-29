@@ -19,17 +19,15 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->string('sku');
             $table->float('price');
-            $table->float('sell_price')->nullable();
+            $table->float('sale_price')->nullable();
             $table->integer('quantity')->nullable();
             $table->string('short_desc')->nullable();
             $table->text('description')->nullable();
             $table->string('image');
             $table->enum('status', ['draft', 'publish', 'inactive'])->default('draft');
             $table->foreignId('category_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            //$table->integer('subcategory_id');
             $table->foreignId('brand_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('vendor_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');
-            //$table->integer('parent_id')->nullable();
             $table->timestamps();
         });
     }
