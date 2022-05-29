@@ -17,7 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::select('categories.*', 'parent.name as parent')->leftjoin('categories as parent', 'parent.id', '=', 'categories.parent_id')->paginate(10);
+        //$categories = Category::select('categories.*', 'parent.name as parent')->leftjoin('categories as parent', 'parent.id', '=', 'categories.parent_id')->paginate(10);
+        $categories = Category::with('parent')->paginate(10);
         return response()->json($categories, 200);
     }
 

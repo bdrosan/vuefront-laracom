@@ -10,7 +10,7 @@ export default {
 
 <style scoped>
 .not-found {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background-color: #e4e4e4;
   display: flex;
@@ -18,5 +18,6 @@ export default {
   align-items: center;
   font-size: x-large;
   color: #7e7e7e;
+  z-index: 10000;
 }
 </style>

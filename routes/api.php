@@ -28,6 +28,9 @@ Route::get('/category/all/{id}', [CategoryController::class, 'getAll']);
 Route::get('/category/{category}', [CategoryController::class, 'show']);
 Route::get('/brands', [BrandController::class, 'index']);
 Route::get('/orders', [OrderController::class, 'index']);
+Route::get('/product', [ProductController::class, 'index']);
+Route::get('/product/{product}', [ProductController::class, 'show']);
+Route::get('/product/byCategory/{category}', [ProductController::class, 'byCategory']);
 
 /**** End Public Routes ****/
 
@@ -67,10 +70,10 @@ Route::middleware('auth:sanctum')->group(function () {
   Route::delete('order/{order}', [OrderController::class, 'destroy'])->Middleware('permission:delete-order');
 
   // product
-  Route::post('order', [ProductController::class, 'store'])->middleware('permission:create-product');
-  Route::put('order/{order}', [ProductController::class, 'update'])->middleware('permission:update-product');
-  Route::delete('order/{order}', [ProductController::class, 'destroy'])->Middleware('permission:delete-produc');
+  Route::post('product', [ProductController::class, 'store'])->middleware('permission:create-product');
+  Route::put('product/{product}', [ProductController::class, 'update'])->middleware('permission:update-product');
+  Route::delete('product/{product}', [ProductController::class, 'destroy'])->Middleware('permission:delete-product');
 });
-Route::post('category', [CategoryController::class, 'store']);
-Route::delete('category/{category}', [CategoryController::class, 'destroy']);
+//Route::post('category', [CategoryController::class, 'store']);
+//Route::delete('category/{category}', [CategoryController::class, 'destroy']);
 // Route::put('category/{category}', [CategoryController::class, 'update']);

@@ -1,5 +1,7 @@
 <template>
   <div>
+    <Header />
+    <Navbar />
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow shadow-sm">
       <div class="container-fluid">
         <ul class="navbar-nav">
@@ -10,11 +12,6 @@
             <router-link to="/about" class="nav-link">About</router-link>
           </li>
           <li class="nav-item">
-<<<<<<< HEAD
-            <a href="/admin/dashboard" class="nav-link" v-if="loggedIn">
-              Admin
-            </a>
-=======
             <router-link
               to="/dashboard"
               class="nav-link"
@@ -27,7 +24,6 @@
             <router-link to="/categories" class="nav-link"
               >Categories</router-link
             >
->>>>>>> 0d3dc49b534281e3a417aee1760de897e79ccf19
           </li>
         </ul>
         <ul class="navbar-nav d-flex">
@@ -66,15 +62,19 @@
         </ul>
       </div>
     </nav>
-
     <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import Footer from "./components/web/layouts/Footer.vue";
+import Header from "./components/web/layouts/Header.vue";
+import Navbar from "./components/web/layouts/Navbar.vue";
 
 export default {
+  components: { Header, Footer, Navbar },
   name: "App",
   computed: {
     ...mapGetters({
