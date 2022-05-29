@@ -34,6 +34,7 @@ Route::get('/orders', [OrderController::class, 'index']);
 Route::middleware('auth:sanctum')->group(function () {
 
   Route::get('currentUser', [UserController::class, 'currentUser']);
+  Route::get('userPermission', [UserController::class, 'userPermission']);
   Route::post('logout', [UserController::class, 'logout']);
 
   //user routes
