@@ -99,7 +99,9 @@
                   <td>
                     <img :src="fileLink(Category.image)" alt="" height="40px" />
                   </td>
-                  <td>{{ Category.parent }}</td>
+                  <td>
+                    {{ Category.parent ? Category.parent.name : null }}
+                  </td>
                   <td>
                     <span class="badge" :class="statusColor(Category.status)">
                       {{ statusName(Category.status) }}</span

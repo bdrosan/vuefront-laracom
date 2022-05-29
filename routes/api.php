@@ -29,7 +29,6 @@ Route::get('/category/{category}', [CategoryController::class, 'show']);
 Route::get('/brands', [BrandController::class, 'index']);
 Route::get('/orders', [OrderController::class, 'index']);
 Route::get('/product', [ProductController::class, 'index']);
-Route::get('/category/all/{id}', [CategoryController::class, 'getAll']);
 Route::get('/product/{product}', [ProductController::class, 'show']);
 Route::get('/product/byCategory/{category}', [ProductController::class, 'byCategory']);
 
