@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/register', [UserController::class, 'register']);
 Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category/all/{id}', [CategoryController::class, 'getAll']);
 Route::get('/category/{category}', [CategoryController::class, 'show']);
 Route::get('/brands', [BrandController::class, 'index']);
 Route::get('/orders', [OrderController::class, 'index']);
@@ -41,10 +42,14 @@ Route::middleware('auth:sanctum')->group(function () {
   Route::resource('/user', UserController::class)->middleware('permission:user-crud');
 
   //category routes
-  Route::post('category', [CategoryController::class, 'store'])->middleware('permission:create-category');
-//   Route::put('category/{category}', [CategoryController::class, 'update'])->middleware('permission:update-category');
-  Route::delete('category/{category}', [CategoryController::class, 'destroy'])->middleware('permission:delete-category');
-  Route::get('category/{slug}', [CategoryController::class, 'show'])->middleware('permission:delete-category');
+  Route::prefix('category')->controller(CategoryController::class)->group(function () {
+    Route::post('/', 'store')->middleware('permission:create-category');
+    Route::post('bulkcreate', 'bulkcreate')->middleware('permission:create-category');
+    Route::put('{category}', 'update')->middleware('permission:update-category');
+    Route::delete('{category}', 'destroy')->middleware('permission:delete-category');
+    Route::post('bulkdelete', 'bulkdelete')->middleware('permission:delete-category');
+    Route::post('changestatus', 'changestatus')->middleware('permission:update-category');
+  });
 
   //brand routes
   Route::post('brand', [BrandController::class, 'store'])->middleware('permission:create-brand');

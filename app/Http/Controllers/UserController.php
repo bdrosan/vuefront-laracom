@@ -26,10 +26,11 @@ class UserController extends Controller
 
     public function userPermission()
     {
-        return Auth::user()->hasRole('super-admin')? 'super-admin': Auth::user()->getPermissionNames();
+        return Auth::user()->hasRole('super-admin') ? 'super-admin' : Auth::user()->getPermissionNames();
     }
-    
-    public function logout(Request $request) {
+
+    public function logout(Request $request)
+    {
         $request->user()->tokens()->delete();
     }
 
