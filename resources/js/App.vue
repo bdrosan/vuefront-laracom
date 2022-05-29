@@ -2,6 +2,66 @@
   <div>
     <Header />
     <Navbar />
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow shadow-sm">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link to="/" class="nav-link" exact="">Home</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/about" class="nav-link">About</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link
+              to="/dashboard"
+              class="nav-link"
+              v-if="loggedIn && permitted"
+            >
+              Dashboard
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/categories" class="nav-link"
+              >Categories</router-link
+            >
+          </li>
+        </ul>
+        <ul class="navbar-nav d-flex">
+          <li class="nav-item dropdown" v-if="currentUser.name">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDarkDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {{ currentUser.name }}
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDarkDropdownMenuLink"
+            >
+              <li>
+                <a class="dropdown-item" href="#logout" @click="logout">
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </li>
+          <template v-else>
+            <li class="nav-item">
+              <router-link to="/login" class="nav-link">Login</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/register" class="nav-link"
+                >Register</router-link
+              >
+            </li>
+          </template>
+        </ul>
+      </div>
+    </nav>
     <router-view />
     <Footer />
   </div>
@@ -16,7 +76,17 @@ import Navbar from "./components/web/layouts/Navbar.vue";
 export default {
   components: { Header, Footer, Navbar },
   name: "App",
-
+  computed: {
+    ...mapGetters({
+      loggedIn: "auth/loggedIn",
+      permitted: "auth/permitted",
+    }),
+    currentUser: {
+      get() {
+        return this.$store.state.auth.user;
+      },
+    },
+  },
   methods: {
     logout() {
       axios
@@ -42,6 +112,7 @@ export default {
       "Authorization"
     ] = `Bearer ${localStorage.getItem("login_token")}`;
     this.$store.dispatch("auth/getUser");
+    this.$store.dispatch("auth/getPermission");
   },
 };
 </script>

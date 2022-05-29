@@ -96,7 +96,7 @@ class CategoryController extends Controller
         ]);
         if ($success && $file_name) {
             Image::make($request->image)->save(public_path('storage/category/') . $file_name);
-            Image::make($request->image)->resize(320, 240)->save(public_path('storage/category/thumbs/') . $file_name);
+            Image::make($request->image)->resize(240, 240)->save(public_path('storage/category/thumbs/') . $file_name);
         }
         return response()->json([
             'success' => $success,
@@ -173,7 +173,7 @@ class CategoryController extends Controller
             $file_ex   = end($file);
             $file_name = uniqid() . '.' . $file_ex;
             Image::make($request->image)->save(public_path('storage/category/') . $file_name);
-            Image::make($request->image)->resize(320, 240)->save(public_path('storage/category/thumbs/') . $file_name);
+            Image::make($request->image)->resize(240, 240)->save(public_path('storage/category/thumbs/') . $file_name);
 
             if ($category->image) {
                 Storage::delete(['public/category/' . $category->image, 'public/category/thumbs/' . $category->image]);

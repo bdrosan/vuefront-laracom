@@ -24,11 +24,10 @@ class UserController extends Controller
         return Auth::user();
     }
 
-    public function rolePermissions()
+    public function userPermission()
     {
-        return response(['role' => Auth::user()->getRoleNames(), 'permissions' => Auth::user()->permissions]);
+        return Auth::user()->hasRole('super-admin') ? 'super-admin' : Auth::user()->getPermissionNames();
     }
-
 
     public function logout(Request $request)
     {

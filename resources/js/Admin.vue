@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
       <aside
@@ -316,6 +317,61 @@
     </div>
 
     <div class="layout-overlay layout-menu-toggle"></div>
+=======
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow shadow-sm">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link to="/admin/dashboard" class="nav-link" v-if="loggedIn">
+              Dashboard
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/admin/categories" class="nav-link"
+              >Categories</router-link
+            >
+          </li>
+        </ul>
+        <ul class="navbar-nav d-flex">
+          <li class="nav-item dropdown" v-if="currentUser.name">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDarkDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {{ currentUser.name }}
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDarkDropdownMenuLink"
+            >
+              <li>
+                <a class="dropdown-item" href="#logout" @click="logout"
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </li>
+          <template v-else>
+            <li class="nav-item">
+              <router-link to="/login" class="nav-link">Login</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/register" class="nav-link"
+                >Register</router-link
+              >
+            </li>
+          </template>
+        </ul>
+      </div>
+    </nav>
+
+    <router-view />
+>>>>>>> 0d3dc49b534281e3a417aee1760de897e79ccf19
   </div>
 </template>
 
@@ -328,17 +384,23 @@ export default {
     ...mapGetters({
       loggedIn: "auth/loggedIn",
     }),
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0d3dc49b534281e3a417aee1760de897e79ccf19
     currentUser: {
       get() {
         return this.$store.state.auth.user;
       },
     },
+<<<<<<< HEAD
     rolePermissions: {
       get() {
         return this.$store.state.auth.rolePermissions;
       },
     },
+=======
+>>>>>>> 0d3dc49b534281e3a417aee1760de897e79ccf19
   },
   methods: {
     logout() {
@@ -353,7 +415,11 @@ export default {
           this.$store.state.auth.user = null;
           this.$store.state.auth.token = null;
           //redirect to login
+<<<<<<< HEAD
           window.location.href = "/login";
+=======
+          window.location.href = "login";
+>>>>>>> 0d3dc49b534281e3a417aee1760de897e79ccf19
         })
         .catch((error) => {
           console.log(error);
@@ -365,7 +431,10 @@ export default {
       "Authorization"
     ] = `Bearer ${localStorage.getItem("login_token")}`;
     this.$store.dispatch("auth/getUser");
+<<<<<<< HEAD
     this.$store.dispatch("auth/getRolePermissions");
+=======
+>>>>>>> 0d3dc49b534281e3a417aee1760de897e79ccf19
   },
 };
 </script>

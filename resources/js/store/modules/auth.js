@@ -1,14 +1,14 @@
 const state = {
     user: {},
-    rolePermissions: {},
+    permission: false,
 };
 
 const mutations = {
     setUser(state, data) {
         state.user = data;
     },
-    setRolePermissions(state, data) {
-        state.rolePermissions = data;
+    setPermission(state, data) {
+        state.permission = data;
     },
 };
 
@@ -24,14 +24,14 @@ const actions = {
                 console.log(error);
             });
     },
-    async getRolePermissions({ commit }) {
+    async getPermission({ commit }) {
         await axios
-            .get("/api/rolePermissions")
+            .get("/api/userPermission")
             .then((response) => {
-                commit("setRolePermissions", response.data);
+                commit("setPermission", response.data);
             })
             .catch((error) => {
-                commit("setRolePermissions", {});
+                commit("setPermission", false);
                 console.log(error);
             });
     },
@@ -52,6 +52,7 @@ const actions = {
 };
 const getters = {
     loggedIn: (state) => !!state.user.name,
+    permitted: (state) => !!state.permission.length,
 };
 
 export default {

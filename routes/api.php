@@ -38,7 +38,7 @@ Route::get('/product/byCategory/{category}', [ProductController::class, 'byCateg
 Route::middleware('auth:sanctum')->group(function () {
 
   Route::get('currentUser', [UserController::class, 'currentUser']);
-  Route::get('rolePermissions', [UserController::class, 'rolePermissions']);
+  Route::get('userPermission', [UserController::class, 'userPermission']);
   Route::post('logout', [UserController::class, 'logout']);
 
   //user routes
