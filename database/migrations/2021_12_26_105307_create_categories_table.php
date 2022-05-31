@@ -19,7 +19,8 @@ class CreateCategoriesTable extends Migration
             $table->string('slug')->unique();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->boolean('active')->default('1');
+            $table->boolean('featured')->default(0);
+            $table->boolean('status')->default(1);
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->foreign('parent_id')->references('id')->on('categories');
             $table->timestamps();
