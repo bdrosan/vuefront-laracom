@@ -1,5 +1,5 @@
 <template>
-  <div>Dashboard logged in {{ loggedUser }}</div>
+  <div class="card card-body">Dashboard logged in {{ loggedUser }}</div>
 </template>
 
 <script>

@@ -1,15 +1,27 @@
 <template>
   <div>
-    <h3 class="card-title">Create Bulk Category</h3>
-    <div class="card">
-      <div class="card-header">
-        <router-link to="/admin/category" class="btn btn-secondary btn-sm">
-          <i class="bx bx-undo"></i>
-          Back to Category
-        </router-link>
+    <div class="mb-5 bg-white py-2">
+      <div class="container-fluid">
+        <div class="d-flex">
+          <h5>Create Category</h5>
+          <div class="ms-3">
+            <router-link to="/admin/category" class="btn btn-secondary btn-sm">
+              <i class="bi bi-arrow-90deg-left"></i>
+              Back to category
+            </router-link>
+            <router-link
+              to="/admin/category/create"
+              class="btn btn-primary btn-sm"
+            >
+              Add Single Category
+            </router-link>
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="container-fluid">
       <!-- /.card-header -->
-      <div class="card-body">
+      <div class="card card-body">
         <form
           @submit.prevent="addCategory()"
           method="POST"
@@ -34,7 +46,7 @@
               />
             </div>
           </div>
-          <div class="card-footer">
+          <div class="mt-3">
             <button type="submit" :disabled="form.busy" class="btn btn-primary">
               Save Category
             </button>

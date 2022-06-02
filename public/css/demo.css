@@ -4,19 +4,13 @@
 ******************************************************************************/
 
 .menu .app-brand.demo {
-    height: 64px;
-    margin-top: 12px;
+    height: 60px;
+    justify-content: center;
 }
 
 .app-brand-logo.demo svg {
     width: 22px;
     height: 38px;
-}
-
-.app-brand-text.demo {
-    font-size: 1.25rem;
-    letter-spacing: -0.5px;
-    text-transform: lowercase;
 }
 
 /* ! For .layout-navbar-fixed added fix padding top tpo .layout-page */
@@ -134,4 +128,44 @@
 
 .dropdown-menu {
     margin: 0;
+}
+
+/*custom style*/
+
+.menu-vertical,
+.menu-vertical .menu-block,
+.menu-vertical .menu-inner > .menu-item,
+.menu-vertical .menu-inner > .menu-header {
+    width: 11rem;
+}
+
+.menu-vertical .menu-inner > .menu-item .menu-link {
+    margin: 0;
+}
+
+.menu-vertical .menu-item .menu-link,
+.menu-vertical .menu-block {
+    padding: 0.25rem 0.5rem;
+}
+
+.menu-vertical .app-brand {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.layout-navbar {
+    height: unset;
+}
+.container-xxl {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.layout-navbar.navbar-detached.container-xxl {
+    max-width: calc(1440px - 2rem);
+}
+.layout-navbar.navbar-detached {
+    width: calc(100% - 2rem);
+}
+.menu-vertical .menu-item .menu-link {
+    font-size: 0.8rem;
 }
