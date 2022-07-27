@@ -15,7 +15,7 @@ class ProductController extends Controller
     */
    public function index()
    {
-      return response()->json(Product::paginate(10));
+      return response()->json(Product::with(['category', 'brand'])->paginate(10));
    }
 
    public function getAll($id)

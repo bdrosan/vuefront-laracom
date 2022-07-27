@@ -28,6 +28,11 @@
                 Category
               </router-link>
             </li>
+            <li class="nav-item">
+              <router-link to="/admin/product" class="nav-link">
+                Product
+              </router-link>
+            </li>
           </ul>
           <ul class="navbar-nav d-flex" v-if="loggedIn">
             <!-- User -->
@@ -44,7 +49,7 @@
                   height="30"
                 />
               </a>
-              <ul class="dropdown-menu dropdown-menu-end">
+              <ul class="dropdown-menu dropdown-menu-end border-0 shadow">
                 <li>
                   <a class="dropdown-item" href="#">
                     <div class="d-flex">

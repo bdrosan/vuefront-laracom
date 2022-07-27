@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('short_desc')->nullable();
             $table->text('description')->nullable();
             $table->string('image');
-            $table->enum('status', ['draft', 'publish', 'inactive'])->default('draft');
+            $table->boolean('status')->default('0');
             $table->foreignId('category_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('brand_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('vendor_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');
